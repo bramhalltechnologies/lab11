@@ -3,13 +3,6 @@ const path = require('path')
 var bodyParser = require('body-parser');
 var validator = require('validator'); 
 
-var app = express();
-
-// See https://stackoverflow.com/questions/5710358/how-to-get-post-query-in-express-node-js
-express.use(bodyParser.json());
-
-// See https://stackoverflow.com/questions/25471856/express-throws-error-as-body-parser-deprecated-undefined-extended
-express.use(bodyParser.urlencoded({ extended: true })); // Required if we need to use HTTP post parameters
 
 const PORT = process.env.PORT || 5000
 
