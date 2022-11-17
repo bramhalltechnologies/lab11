@@ -16,7 +16,8 @@ app
     var lat = request.body.lat;
     var lon = request.body.lng;
     if(user == "" || lat == "" || lon == ""){
-      response.send({"error":"Whoops, something is wrong with your data!"});
+      throw new Error('Whoops, something is wrong with your data!');
+      // response.send({"error":"Whoops, something is wrong with your data!"});
     } else {
       response.send("good");
     }
