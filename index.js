@@ -11,10 +11,11 @@ express()
     // var username = request.body.username;
     // var lat = request.body.lat;
     // var lon = request.body.lng;
-    // if(username ==  "" || lat == "" || lng == ""){
-    //   response.send("bad");
-    // } else {
+    var rand = Math.floor(Math.random() * 1);
+    if(rand == 1){
+      response.send("bad");
+    } else {
       response.send("good");
-    // }
+    }
   }) 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
