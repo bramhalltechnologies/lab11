@@ -13,11 +13,10 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .post('/rides', function(request, response) {
     var username = request.body.username;
-    // var lat = request.body.lat;
-    // var lon = request.body.lng;
-    var rand = Math.floor(Math.random() * 2);
-    if(rand == 1){
-      response.send(username);
+    var lat = request.body.lat;
+    var lon = request.body.lng;
+    if(user == "" || lat == "" || lon == ""){
+      response.send({"error":"Whoops, something is wrong with your data!"});
     } else {
       response.send("good");
     }
