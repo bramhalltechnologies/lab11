@@ -15,10 +15,10 @@ app
     var username = request.body.username;
     var lat = request.body.lat;
     var lon = request.body.lng;
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-headers", "X-Requested-With")
     if(username.length == 0 || lat.length ==  0 || lon.length == 0){
       // throw new Error('Whoops, something is wrong with your data!');
-      response.header("Access-Control-Allow-Origin", "*");
-      response.header("Access-Control-Allow-headers", "X-Requested-With")
       response.json({"error":"Whoops, something is wrong with your data!"});
       response.send("bad");
       // response.send({"error":"Whoops, something is wrong with your data!"});
