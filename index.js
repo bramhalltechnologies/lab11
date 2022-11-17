@@ -11,7 +11,7 @@ express()
     // var username = request.body.username;
     // var lat = request.body.lat;
     // var lon = request.body.lng;
-    var rand = Math.floor(Math.random() * 1);
+    var rand = Math.floor(Math.random() * 2);
     if(rand == 1){
       response.send("bad");
     } else {
