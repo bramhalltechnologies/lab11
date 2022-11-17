@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 var bodyParser = require('body-parser');
-var validator = require('validator');
+var validator = require('validator'); 
 
 var app = express();
 
@@ -13,12 +13,18 @@ app.use(bodyParser.urlencoded({ extended: true })); // Required if we need to us
 
 const PORT = process.env.PORT || 5000
 
-app.post('/rides', function(request, response) {
-  response.send(String(request.body));
-})
-
-app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/index'))
+app.post('/rides', (req, res) => {
+  console.log('Got body:', req.body);
+  res.sendStatus(200);
+});
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+// express()
+//   .use(express.static(path.join(__dirname, 'public')))
+//   .set('views', path.join(__dirname, 'views'))
+//   .set('view engine', 'ejs')
+//   .get('/', (req, res) => res.render('pages/index'))
+//   .post('/rides', function(request, response) {
+//     response.send(String(request.body));
+//   })
+//   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
