@@ -17,7 +17,7 @@ app
     // var lon = request.body.lng;
     var rand = Math.floor(Math.random() * 2);
     if(rand == 1){
-      response.send("bad");
+      response.send(request.body);
     } else {
       response.send("good");
     }
