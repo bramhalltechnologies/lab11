@@ -12,12 +12,12 @@ app
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .post('/rides', function(request, response) {
-    // var username = request.body.username;
+    var username = request.body.username;
     // var lat = request.body.lat;
     // var lon = request.body.lng;
     var rand = Math.floor(Math.random() * 2);
     if(rand == 1){
-      response.send(request.body);
+      response.send(username);
     } else {
       response.send("good");
     }
