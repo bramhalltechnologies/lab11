@@ -8,13 +8,6 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .post('/rides', function(request, response) {
-    var username = request.body.username;
-    var lat = request.body.lat;
-    var lon = request.body.lng;
-    if(username ==  "" || lat == "" || lng == ""){
-      response.send("bad");
-    } else {
-        response.send("bad")
-    }
+    response.send(String(request.body));
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
