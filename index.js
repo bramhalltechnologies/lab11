@@ -6,6 +6,25 @@ var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+var postgres = require('pg');
+
+var connection = postgres.createConnection({
+  host     : "sub-bum.c1tjeabvxzjt.us-east-1.rds.amazonaws.com",
+  user     : "subbum",
+  password : "subbumrocks!",
+  port     : "5432"
+});
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('Database connection failed: ' + err.stack);
+    return;
+  }
+
+  console.log('Connected to database.');
+});
+
 app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
@@ -29,4 +48,5 @@ app
       response.send("good");
     }
   }) 
+  .post(/)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
