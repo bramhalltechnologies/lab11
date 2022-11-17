@@ -16,7 +16,7 @@ app
     var lat = request.body.lat;
     var lon = request.body.lng;
     var rand = Math.floor(Math.random() * 2);
-    if(rand == 1){
+    if(username == null){
       // throw new Error('Whoops, something is wrong with your data!');
       // response.json({"error":"Whoops, something is wrong with your data!"});
       response.send("bad");
